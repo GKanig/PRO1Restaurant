@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+COPY ./createDb.sql .
+ENV ACCEPT_EULA Y
+ENV sa_password St@rt123
+CMD /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "St@rt123" -i ./createDb.sql 
